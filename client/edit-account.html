@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Update your Grand Slam Gear account information."
+    >
+
+    <title>Edit Account | Grand Slam Gear</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <a
+            href="index.html"
+            aria-label="Grand Slam Gear home"
+        >
+            ⚾ Grand Slam Gear
+        </a>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#featured">Products</a></li>
+            <li><a href="bats.html">Bats</a></li>
+            <li><a href="gloves.html">Gloves</a></li>
+            <li><a href="helmets.html">Helmets</a></li>
+            <li><a href="cleats.html">Cleats</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <form
+        class="search-bar"
+        id="search-form"
+        role="search"
+    >
+        <label
+            for="search-input"
+            class="visually-hidden"
+        >
+            Search products
+        </label>
+
+        <input
+            id="search-input"
+            name="search"
+            type="search"
+            placeholder="Search products..."
+            autocomplete="off"
+        >
+
+        <button
+            type="submit"
+            aria-label="Search products"
+        >
+            <i
+                class="fa-solid fa-magnifying-glass"
+                aria-hidden="true"
+            ></i>
+        </button>
+    </form>
+
+    <div class="icons">
+
+        <a
+            href="account.html"
+            aria-label="View account"
+        >
+            <i
+                class="fa-solid fa-user"
+                aria-hidden="true"
+            ></i>
+        </a>
+
+        <a
+            href="cart.html"
+            aria-label="View shopping cart"
+        >
+            <i
+                class="fa-solid fa-cart-shopping"
+                aria-hidden="true"
+            ></i>
+        </a>
+
+    </div>
+
+</header>
+
+<main>
+
+    <section class="page-hero">
+
+        <h1>Edit Account</h1>
+
+        <p>
+            Update your personal and shipping information below.
+        </p>
+
+    </section>
+
+    <section class="edit-account-section">
+
+        <div class="edit-account-card">
+
+            <div class="edit-account-icon">
+                <i
+                    class="fa-solid fa-user-pen"
+                    aria-hidden="true"
+                ></i>
+            </div>
+
+            <h2>Account Information</h2>
+
+            <p class="edit-account-description">
+                Keep your contact and address information up to date.
+            </p>
+
+            <form id="edit-account-form">
+
+                <div class="edit-account-row">
+
+                    <div class="form-group">
+                        <label for="first-name">
+                            First Name
+                        </label>
+
+                        <input
+                            id="first-name"
+                            name="firstName"
+                            type="text"
+                            autocomplete="given-name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">
+                            Last Name
+                        </label>
+
+                        <input
+                            id="last-name"
+                            name="lastName"
+                            type="text"
+                            autocomplete="family-name"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        disabled
+                    >
+
+                    <small class="field-note">
+                        Email changes are not available from this page.
+                    </small>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        autocomplete="tel"
+                        placeholder="709-555-0100"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="address">
+                        Street Address
+                    </label>
+
+                    <input
+                        id="address"
+                        name="address"
+                        type="text"
+                        autocomplete="street-address"
+                        placeholder="Street address"
+                    >
+
+                </div>
+
+                <div class="edit-account-row">
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                        </label>
+
+                        <input
+                            id="city"
+                            name="city"
+                            type="text"
+                            autocomplete="address-level2"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="province">
+                            Province
+                        </label>
+
+                        <input
+                            id="province"
+                            name="province"
+                            type="text"
+                            autocomplete="address-level1"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="postal-code">
+                        Postal Code
+                    </label>
+
+                    <input
+                        id="postal-code"
+                        name="postalCode"
+                        type="text"
+                        autocomplete="postal-code"
+                        placeholder="A1A 1A1"
+                    >
+
+                </div>
+
+                <div class="edit-account-actions">
+
+                    <button
+                        type="submit"
+                        class="secondary-button"
+                    >
+                        <i
+                            class="fa-solid fa-floppy-disk"
+                            aria-hidden="true"
+                        ></i>
+
+                        Save Changes
+                    </button>
+
+                    <a
+                        href="account.html"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </a>
+
+                </div>
+
+                <p
+                    id="edit-account-message"
+                    class="form-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <h2>Grand Slam Gear</h2>
+
+    <p>
+        Quality Baseball Equipment Since 2026
+    </p>
+
+    <p>
+        <a href="contact.html">
+            Contact Us
+        </a>
+    </p>
+
+    <p>
+        &copy; 2026 Grand Slam Gear.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+<script src="js/edit-account.js"></script>
+
+<script>
+
+    const searchForm =
+        document.getElementById("search-form");
+
+    const searchInput =
+        document.getElementById("search-input");
+
+    searchForm.addEventListener(
+        "submit",
+        (event) => {
+
+            event.preventDefault();
+
+            const searchTerm =
+                searchInput.value.trim();
+
+            if (!searchTerm) {
+                return;
+            }
+
+            window.location.href =
+                `index.html?search=${encodeURIComponent(searchTerm)}`;
+        }
+    );
+
+</script>
+
+<script src="js/auth-status.js"></script>
+<script src="js/cart-status.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Log in to your Grand Slam Gear account."
+    >
+
+    <title>Log In | Grand Slam Gear</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<header>
+
+    <!-- Logo -->
+    <div class="logo">
+        <a
+            href="index.html"
+            aria-label="Grand Slam Gear home"
+        >
+            ⚾ Grand Slam Gear
+        </a>
+    </div>
+
+
+    <nav aria-label="Main navigation">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="index.html#featured">Products</a></li>
+
+        <li><a href="bats.html">Bats</a></li>
+
+        <li><a href="gloves.html">Gloves</a></li>
+
+        <li><a href="helmets.html">Helmets</a></li>
+
+        <li><a href="cleats.html">Cleats</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <!-- =========================================
+         SEARCH BAR
+         ========================================= -->
+
+    <form
+        class="search-bar"
+        id="search-form"
+        role="search"
+    >
+
+        <label
+            for="search-input"
+            class="visually-hidden"
+        >
+            Search products
+        </label>
+
+        <input
+            id="search-input"
+            name="search"
+            type="search"
+            placeholder="Search products..."
+            autocomplete="off"
+        >
+
+        <button
+            type="submit"
+            aria-label="Search products"
+        >
+            <i
+                class="fa-solid fa-magnifying-glass"
+                aria-hidden="true"
+            ></i>
+        </button>
+
+    </form>
+
+
+    <!-- =========================================
+         ACCOUNT / CART
+         ========================================= -->
+
+    <div class="icons">
+
+        <a
+            href="account.html"
+            aria-label="View account"
+        >
+            <i
+                class="fa-solid fa-user"
+                aria-hidden="true"
+            ></i>
+        </a>
+
+        <a
+            href="cart.html"
+            aria-label="View shopping cart"
+        >
+            <i
+                class="fa-solid fa-cart-shopping"
+                aria-hidden="true"
+            ></i>
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     MAIN CONTENT
+     ========================================= -->
+
+<main>
+
+
+    <!-- PAGE HERO -->
+
+    <section class="page-hero">
+
+        <h1>Welcome Back</h1>
+
+        <p>
+            Log in to manage your account,
+            view your purchase history,
+            and continue shopping.
+        </p>
+
+    </section>
+
+
+    <!-- =========================================
+         LOGIN SECTION
+         ========================================= -->
+
+    <section class="login-section">
+
+        <div class="login-card">
+
+
+            <!-- User Icon -->
+
+            <div class="login-icon">
+
+                <i
+                    class="fa-solid fa-user"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+
+            <h2>Log In</h2>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="login-form">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="current-password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    class="button login-button"
+                    type="submit"
+                >
+
+                    <i
+                        class="fa-solid fa-right-to-bracket"
+                        aria-hidden="true"
+                    ></i>
+
+                    Log In
+
+                </button>
+
+
+                <!-- LOGIN STATUS -->
+
+                <p
+                    id="login-message"
+                    class="form-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+
+            <!-- REGISTER SEPARATOR -->
+
+            <div class="login-divider">
+
+                <span>
+                    New to Grand Slam Gear?
+                </span>
+
+            </div>
+
+
+            <!-- REGISTER BUTTON -->
+
+            <a
+                href="register.html"
+                class="secondary-button register-link"
+            >
+                Create an Account
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer>
+
+    <h2>
+        Grand Slam Gear
+    </h2>
+
+    <p>
+        Quality Baseball Equipment Since 2026
+    </p>
+
+    <p>
+        <a href="contact.html">
+            Contact Us
+        </a>
+    </p>
+
+    <p>
+        &copy; 2026 Grand Slam Gear.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
+
+
+<!-- Login functionality -->
+<script src="js/login.js"></script>
+
+
+<!-- Search functionality -->
+<script>
+
+    const searchForm =
+        document.getElementById("search-form");
+
+    const searchInput =
+        document.getElementById("search-input");
+
+
+    searchForm.addEventListener(
+        "submit",
+        (event) => {
+
+            event.preventDefault();
+
+            const searchTerm =
+                searchInput.value.trim();
+
+
+            if (!searchTerm) {
+                return;
+            }
+
+
+            window.location.href =
+                `index.html?search=${encodeURIComponent(searchTerm)}`;
+
+        }
+    );
+
+</script>
+
+
+<!-- Shopping cart quantity -->
+<script src="js/cart-status.js"></script>
+
+
+</body>
+
+</html>

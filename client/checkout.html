@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout | Grand Slam Gear</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html" aria-label="Grand Slam Gear home">
+            ⚾ Grand Slam Gear
+        </a>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bats.html">Bats</a></li>
+            <li><a href="gloves.html">Gloves</a></li>
+            <li><a href="helmets.html">Helmets</a></li>
+            <li><a href="cleats.html">Cleats</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <a href="account.html" aria-label="View account">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+        </a>
+
+        <a href="cart.html" aria-label="View shopping cart">
+            <i
+                class="fa-solid fa-cart-shopping"
+                aria-hidden="true"
+            ></i>
+        </a>
+    </div>
+</header>
+
+<main>
+    <section class="checkout-section">
+        <div class="checkout-form-container">
+            <h1>Checkout</h1>
+
+            <p>
+                Enter your shipping information to submit your order.
+                No credit-card information is required.
+            </p>
+
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="shipping-address">
+                        Street address
+                    </label>
+
+                    <input
+                        id="shipping-address"
+                        name="shippingAddress"
+                        type="text"
+                        autocomplete="street-address"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="shipping-city">City</label>
+
+                    <input
+                        id="shipping-city"
+                        name="shippingCity"
+                        type="text"
+                        autocomplete="address-level2"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="shipping-province">
+                        Province
+                    </label>
+
+                    <input
+                        id="shipping-province"
+                        name="shippingProvince"
+                        type="text"
+                        autocomplete="address-level1"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="shipping-postal-code">
+                        Postal code
+                    </label>
+
+                    <input
+                        id="shipping-postal-code"
+                        name="shippingPostalCode"
+                        type="text"
+                        autocomplete="postal-code"
+                        required
+                    >
+                </div>
+
+                <button
+                    id="submit-order-button"
+                    class="button"
+                    type="submit"
+                >
+                    Submit Order
+                </button>
+
+                <p
+                    id="checkout-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+            </form>
+        </div>
+
+        <aside
+            class="checkout-summary"
+            aria-labelledby="checkout-summary-heading"
+        >
+            <h2 id="checkout-summary-heading">
+                Order Summary
+            </h2>
+
+            <div id="checkout-items"></div>
+
+            <div class="cart-summary-row">
+                <span>Total</span>
+                <strong id="checkout-total">$0.00</strong>
+            </div>
+        </aside>
+    </section>
+</main>
+
+<footer>
+    <h2>Grand Slam Gear</h2>
+    <p>Quality Baseball Equipment Since 2026</p>
+    <p>&copy; 2026 Grand Slam Gear</p>
+</footer>
+
+<script src="js/checkout.js"></script>
+<script src="js/auth-status.js"></script>
+<script src="js/cart-status.js"></script>
+</body>
+</html>
