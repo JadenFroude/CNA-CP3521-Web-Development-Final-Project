@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Purchase History | Grand Slam Gear</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html" aria-label="Grand Slam Gear home">
+            ⚾ Grand Slam Gear
+        </a>
+    </div>
+
+    <nav aria-label="Main navigation">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="index.html#featured">Products</a></li>
+
+        <li><a href="bats.html">Bats</a></li>
+
+        <li><a href="gloves.html">Gloves</a></li>
+
+        <li><a href="helmets.html">Helmets</a></li>
+
+        <li><a href="cleats.html">Cleats</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <div class="icons">
+        <a href="account.html" aria-label="View account">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+        </a>
+
+        <a href="cart.html" aria-label="View cart">
+            <i
+                class="fa-solid fa-cart-shopping"
+                aria-hidden="true"
+            ></i>
+        </a>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <h1>Purchase History</h1>
+
+        <p>
+            Review your previous Grand Slam Gear orders.
+        </p>
+    </section>
+
+    <section class="orders-section">
+        <div
+            id="orders-container"
+            aria-live="polite"
+            aria-busy="true"
+        >
+            <p>Loading purchase history...</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <h2>Grand Slam Gear</h2>
+    <p>Quality Baseball Equipment Since 2026</p>
+    <p>&copy; 2026 Grand Slam Gear</p>
+</footer>
+
+<script src="js/orders.js"></script>
+<script src="js/auth-status.js"></script>
+<script src="js/cart-status.js"></script>
+</body>
+</html>

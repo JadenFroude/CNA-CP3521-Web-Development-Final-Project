@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Browse baseball gloves available from Grand Slam Gear."
+    >
+
+    <title>Baseball Gloves | Grand Slam Gear</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            ⚾ Grand Slam Gear
+        </a>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#featured">Products</a></li>
+            <li><a href="bats.html">Bats</a></li>
+            <li><a href="gloves.html" aria-current="page">Gloves</a></li>
+            <li><a href="helmets.html">Helmets</a></li>
+            <li><a href="cleats.html">Cleats</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <form class="search-bar" id="search-form" role="search">
+        <label for="search-input" class="visually-hidden">
+            Search products
+        </label>
+
+        <input
+            id="search-input"
+            type="search"
+            placeholder="Search products..."
+        >
+
+        <button type="submit" aria-label="Search products">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+
+    <div class="icons">
+        <a href="account.html" aria-label="View account">
+            <i class="fa-solid fa-user"></i>
+        </a>
+
+        <a href="cart.html" aria-label="View shopping cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-hero">
+        <h1>Baseball Gloves</h1>
+
+        <p>
+            Browse our collection of baseball gloves for infield,
+            outfield and developing players.
+        </p>
+    </section>
+
+    <section class="catalogue-section featured">
+        <h2>Available Gloves</h2>
+
+        <div
+            id="product-grid"
+            class="product-grid"
+            aria-live="polite"
+            aria-busy="true"
+        >
+            <p>Loading products...</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <h2>Grand Slam Gear</h2>
+
+    <p>Quality Baseball Equipment Since 2026</p>
+
+    <p>
+        <a href="contact.html">Contact Us</a>
+    </p>
+
+    <p>&copy; 2026 Grand Slam Gear. All Rights Reserved.</p>
+</footer>
+
+<script src="js/products.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        loadProducts("Gloves");
+    });
+
+    document
+        .getElementById("search-form")
+        .addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const searchTerm =
+                document.getElementById("search-input").value.trim();
+
+            if (searchTerm) {
+                window.location.href =
+                    `index.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+</script>
+<script src="js/auth-status.js"></script>
+<script src="js/cart-status.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Browse baseball bats available from Grand Slam Gear."
+    >
+
+    <title>Baseball Bats | Grand Slam Gear</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html" aria-label="Grand Slam Gear home">
+            ⚾ Grand Slam Gear
+        </a>
+    </div>
+
+    <nav aria-label="Main navigation">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="index.html#featured">Products</a></li>
+
+        <li><a href="bats.html">Bats</a></li>
+
+        <li><a href="gloves.html">Gloves</a></li>
+
+        <li><a href="helmets.html">Helmets</a></li>
+
+        <li><a href="cleats.html">Cleats</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <form
+        class="search-bar"
+        id="search-form"
+        role="search"
+    >
+        <label for="search-input" class="visually-hidden">
+            Search products
+        </label>
+
+        <input
+            id="search-input"
+            name="search"
+            type="search"
+            placeholder="Search products..."
+            autocomplete="off"
+        >
+
+        <button
+            type="submit"
+            aria-label="Search products"
+        >
+            <i
+                class="fa-solid fa-magnifying-glass"
+                aria-hidden="true"
+            ></i>
+        </button>
+    </form>
+
+    <div class="icons">
+        <a
+            href="account.html"
+            aria-label="View account"
+        >
+            <i
+                class="fa-solid fa-user"
+                aria-hidden="true"
+            ></i>
+        </a>
+
+        <a
+            href="cart.html"
+            aria-label="View shopping cart"
+        >
+            <i
+                class="fa-solid fa-cart-shopping"
+                aria-hidden="true"
+            ></i>
+        </a>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <h1>Baseball Bats</h1>
+
+        <p>
+            Browse our available baseball bats and view current pricing,
+            descriptions and inventory.
+        </p>
+    </section>
+
+    <section
+        class="catalogue-section featured"
+        aria-labelledby="available-bats-heading"
+    >
+        <h2 id="available-bats-heading">Available Bats</h2>
+
+        <div
+            id="product-grid"
+            class="product-grid"
+            aria-live="polite"
+            aria-busy="true"
+        >
+            <p>Loading products...</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <h2>Grand Slam Gear</h2>
+
+    <p>Quality Baseball Equipment Since 2026</p>
+
+    <p>&copy; 2026 Grand Slam Gear</p>
+</footer>
+
+<script src="js/products.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        loadProducts("Bats");
+    });
+
+    const searchForm = document.getElementById("search-form");
+    const searchInput = document.getElementById("search-input");
+
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const searchTerm = searchInput.value.trim();
+
+        if (!searchTerm) {
+            return;
+        }
+
+        window.location.href =
+            `index.html?search=${encodeURIComponent(searchTerm)}`;
+    });
+</script>
+
+<script src="js/auth-status.js"></script
+<script src="js/cart-status.js"></script>
+</body>
+</html>

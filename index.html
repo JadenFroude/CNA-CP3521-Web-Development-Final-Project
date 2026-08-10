@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Shop baseball bats, gloves, helmets and cleats from Grand Slam Gear."
+    >
+
+    <title>Grand Slam Gear</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html" aria-label="Grand Slam Gear home">
+            ⚾ Grand Slam Gear
+        </a>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li>
+                <a href="index.html" aria-current="page">Home</a>
+            </li>
+
+            <li>
+                <a href="#featured">Products</a>
+            </li>
+
+            <li>
+                <a href="bats.html">Bats</a>
+            </li>
+
+            <li>
+                <a href="gloves.html">Gloves</a>
+            </li>
+
+            <li>
+                <a href="helmets.html">Helmets</a>
+            </li>
+
+            <li>
+                <a href="cleats.html">Cleats</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <form
+        class="search-bar"
+        id="search-form"
+        role="search"
+    >
+        <label
+            for="search-input"
+            class="visually-hidden"
+        >
+            Search products
+        </label>
+
+        <input
+            id="search-input"
+            name="search"
+            type="search"
+            placeholder="Search products..."
+            autocomplete="off"
+        >
+
+        <button
+            type="submit"
+            aria-label="Search products"
+        >
+            <i
+                class="fa-solid fa-magnifying-glass"
+                aria-hidden="true"
+            ></i>
+        </button>
+    </form>
+
+    <div class="icons">
+        <a
+            href="account.html"
+            aria-label="View account"
+        >
+            <i
+                class="fa-solid fa-user"
+                aria-hidden="true"
+            ></i>
+        </a>
+
+        <a
+            href="cart.html"
+            aria-label="View shopping cart"
+        >
+            <i
+                class="fa-solid fa-cart-shopping"
+                aria-hidden="true"
+            ></i>
+        </a>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Play Like a Champion</h1>
+
+            <p>
+                Premium baseball equipment for every player.
+                Browse our selection of bats, gloves, helmets,
+                cleats and accessories designed for athletes
+                of every level.
+            </p>
+
+            <a href="#featured" class="btn">
+                Shop Now
+            </a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Shop by Category</h2>
+
+        <div class="category-grid">
+            <a
+                href="bats.html"
+                style="text-decoration: none; color: inherit;"
+            >
+                <div class="card">
+                    <i
+                        class="fa-solid fa-baseball"
+                        aria-hidden="true"
+                    ></i>
+
+                    <h3>Bats</h3>
+                </div>
+            </a>
+
+            <a
+                href="gloves.html"
+                style="text-decoration: none; color: inherit;"
+            >
+                <div class="card">
+                    <i
+                        class="fa-solid fa-baseball"
+                        aria-hidden="true"
+                    ></i>
+
+                    <h3>Gloves</h3>
+                </div>
+            </a>
+
+            <a
+                href="helmets.html"
+                style="text-decoration: none; color: inherit;"
+            >
+                <div class="card">
+                    <i
+                        class="fa-solid fa-helmet-safety"
+                        aria-hidden="true"
+                    ></i>
+
+                    <h3>Helmets</h3>
+                </div>
+            </a>
+
+            <a
+                href="cleats.html"
+                style="text-decoration: none; color: inherit;"
+            >
+                <div class="card">
+                    <i
+                        class="fa-solid fa-shoe-prints"
+                        aria-hidden="true"
+                    ></i>
+
+                    <h3>Cleats</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section
+        class="featured"
+        id="featured"
+        aria-labelledby="featured-heading"
+    >
+        <h2 id="featured-heading">
+            Featured Products
+        </h2>
+
+        <div
+            id="product-grid"
+            class="product-grid"
+            aria-live="polite"
+        >
+            <p>Search for products using the search bar above.</p>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div>
+            <i
+                class="fa-solid fa-truck-fast"
+                aria-hidden="true"
+            ></i>
+
+            <h3>Fast Shipping</h3>
+
+            <p>Quick delivery across Canada.</p>
+        </div>
+
+        <div>
+            <i
+                class="fa-solid fa-shield-halved"
+                aria-hidden="true"
+            ></i>
+
+            <h3>Secure Checkout</h3>
+
+            <p>Your account and order information are protected.</p>
+        </div>
+
+        <div>
+            <i
+                class="fa-solid fa-arrow-rotate-left"
+                aria-hidden="true"
+            ></i>
+
+            <h3>30-Day Returns</h3>
+
+            <p>Easy returns on eligible purchases.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <h2>Grand Slam Gear</h2>
+
+    <p>Quality Baseball Equipment Since 2026</p>
+
+    <p>
+        <a href="contact.html">Contact Us</a>
+    </p>
+
+    <p>
+        &copy; 2026 Grand Slam Gear. All Rights Reserved.
+    </p>
+</footer>
+
+<script src="js/home.js"></script>
+
+</body>
+
+<script src="js/auth-status.js"></script>
+<script src="js/cart-status.js"></script>
+</html>
