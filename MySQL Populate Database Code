@@ -1,0 +1,230 @@
+CREATE DATABASE IF NOT EXISTS grand_slam_gear
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE grand_slam_gear;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    phone VARCHAR(30),
+    address VARCHAR(255),
+    city VARCHAR(100),
+    province VARCHAR(100),
+    postal_code VARCHAR(20),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS products (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    description TEXT,
+    category VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    stock_quantity INT UNSIGNED NOT NULL DEFAULT 0,
+    image_url VARCHAR(255),
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS orders (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNSIGNED NOT NULL,
+    total_amount DECIMAL(10,2) NOT NULL,
+    status VARCHAR(50) NOT NULL DEFAULT 'Submitted',
+    shipping_address VARCHAR(255) NOT NULL,
+    shipping_city VARCHAR(100) NOT NULL,
+    shipping_province VARCHAR(100) NOT NULL,
+    shipping_postal_code VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_orders_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS order_items (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    order_id INT UNSIGNED NOT NULL,
+    product_id INT UNSIGNED NOT NULL,
+    product_name VARCHAR(150) NOT NULL,
+    quantity INT UNSIGNED NOT NULL,
+    price_at_purchase DECIMAL(10,2) NOT NULL,
+
+    CONSTRAINT fk_order_items_order
+        FOREIGN KEY (order_id)
+        REFERENCES orders(id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_order_items_product
+        FOREIGN KEY (product_id)
+        REFERENCES products(id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS contact_messages (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    subject VARCHAR(200) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE INDEX idx_products_category
+ON products(category);
+
+CREATE INDEX idx_products_active
+ON products(is_active);
+
+CREATE INDEX idx_products_name
+ON products(name);
+
+CREATE INDEX idx_orders_user
+ON orders(user_id);
+
+CREATE INDEX idx_orders_created_at
+ON orders(created_at);
+
+CREATE INDEX idx_order_items_order
+ON order_items(order_id);
+
+CREATE INDEX idx_order_items_product
+ON order_items(product_id);
+
+CREATE INDEX idx_contact_messages_created_at
+ON contact_messages(created_at);
+
+INSERT INTO products
+(name, description, category, price, stock_quantity, image_url, is_active)
+VALUES
+(
+    'Maple Pro Baseball Bat',
+    'A durable maple baseball bat designed for strong contact and balanced performance.',
+    'Bats',
+    179.99,
+    12,
+    'images/maple-pro-baseball-bat.jpg',
+    TRUE
+),
+(
+    'Youth Aluminum Bat',
+    'A lightweight aluminum bat designed for younger baseball players.',
+    'Bats',
+    99.99,
+    18,
+    'images/youth-aluminum-bat.jpg',
+    TRUE
+),
+(
+    'Power Composite Bat',
+    'Lightweight composite baseball bat designed for power and performance.',
+    'Bats',
+    249.99,
+    8,
+    'images/power-composite-bat.jpg',
+    TRUE
+),
+(
+    'Infield Leather Glove',
+    'A responsive leather glove with a compact shape suited for infield play.',
+    'Gloves',
+    129.99,
+    14,
+    'images/infield-leather-glove.jpg',
+    TRUE
+),
+(
+    'Outfield Pro Glove',
+    'A full-size outfield glove with a deep pocket for tracking and securing fly balls.',
+    'Gloves',
+    159.99,
+    10,
+    'images/outfield-pro-glove.jpg',
+    TRUE
+),
+(
+    'Youth Training Glove',
+    'A comfortable training glove designed for youth players learning fielding fundamentals.',
+    'Gloves',
+    69.99,
+    20,
+    'images/youth-training-glove.jpg',
+    TRUE
+),
+(
+    'Adult Batting Helmet',
+    'A protective adult batting helmet designed for comfort and reliable head protection.',
+    'Helmets',
+    74.99,
+    16,
+    'images/adult-batting-helmet.jpg',
+    TRUE
+),
+(
+    'Youth Batting Helmet',
+    'A lightweight youth batting helmet with a secure and comfortable fit.',
+    'Helmets',
+    59.99,
+    19,
+    'images/youth-batting-helmet.jpg',
+    TRUE
+),
+(
+    'Face Guard Helmet',
+    'A batting helmet with an integrated face guard for additional protection at the plate.',
+    'Helmets',
+    89.99,
+    11,
+    'images/face-guard-helmet.jpg',
+    TRUE
+),
+(
+    'Molded Baseball Cleats',
+    'Comfortable molded baseball cleats designed for dependable traction on the field.',
+    'Cleats',
+    79.99,
+    15,
+    'images/molded-baseball-cleats.jpg',
+    TRUE
+),
+(
+    'Metal Pro Cleats',
+    'Performance baseball cleats with metal spikes for advanced traction and acceleration.',
+    'Cleats',
+    119.99,
+    9,
+    'images/metal-pro-cleats.jpg',
+    TRUE
+),
+(
+    'Youth Rubber Cleats',
+    'Durable youth baseball cleats with rubber studs for comfort and field grip.',
+    'Cleats',
+    64.99,
+    22,
+    'images/youth-rubber-cleats.jpg',
+    TRUE
+);
+
+SELECT
+    id,
+    name,
+    category,
+    price,
+    stock_quantity,
+    image_url,
+    is_active
+FROM products
+ORDER BY id;
